@@ -12,7 +12,7 @@ from torch._utils import (_flatten_dense_tensors, _take_tensors,
                           _unflatten_dense_tensors)
 
 
-def init_dist(launcher, backend='nccl', **kwargs):
+def init_dist(launcher, backend='gloo', **kwargs):
     if mp.get_start_method(allow_none=True) is None:
         mp.set_start_method('spawn')
     if launcher == 'pytorch':
